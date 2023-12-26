@@ -114,7 +114,10 @@ export default function Home() {
                 <div className='container mx-auto flex flex-col gap-16 px-5 md:px-10'>
                     <h2 className='text-3xl md:text-5xl text-text-h2-purple text-center'>
                         <span className='font-bold'>What We Do</span><br />
-                        <span className='font-light'>For Your Business</span>
+                        <span className='font-light relative'>
+                            For Your Business
+                            <div className='bg-[#FDC221] w-[160px] h-[10px] absolute bottom-2 right-6 -z-10'></div>
+                        </span>
                     </h2>
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7'>
                         <div className='rounded-lg bg-white p-4 flex flex-col gap-3'>
@@ -152,10 +155,10 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className='container mx-auto px-5 md:px-20 flex flex-col gap-7 py-20'>
+            <section className='container mx-auto px-5 md:px-20 flex flex-col gap-7 py-36'>
                 <div className='flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-start'>
                     <h2 className='text-3xl md:text-5xl font-semibold text-text-h2-black leading-snug md:w-1/3'>Our Support Package</h2>
-                    <p className='font-medium text-text-body-gray1 md:w-1/3'>At Speedside Labs, our commitment to your success doesn't end at project completion. Dive into the tailored support experience offered by our Support Package.</p>
+                    <p className='font-medium text-text-body-gray1 md:w-1/3'>At Speedside Tech, our commitment to your success doesn't end at project completion. Dive into the tailored support experience offered by our Support Package.</p>
                     <a href="#" className='text-white bg-primary rounded-full px-5 py-3 whitespace-nowrap'>Get Started</a>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
@@ -198,9 +201,12 @@ export default function Home() {
                     <div className='flex flex-col md:flex-row items-center justify-between gap-5 container mx-auto px-5 md:px-10 text-center md:text-start'>
                         <h2 className='text-3xl md:text-5xl text-text-h2-purple'>
                             <span className='font-bold'>Our Recent Work</span><br />
-                            <span className='font-light'>By Speedside Lab</span>
+                            <span className='font-light relative'>
+                                By Speedside Tech
+                                <div className='bg-[#FDC221] w-[300px] h-[8px] absolute bottom-2 right-5 -z-10'></div>
+                            </span>
                         </h2>
-                        <p className='text-text-body-purple w-full md:w-2/5'>Welcome to our portfolio, where innovation meets execution. Explore a collection of projects that showcase the diversity and excellence of Speedside Labs.</p>
+                        <p className='text-text-body-purple w-full md:w-2/5'>Welcome to our portfolio, where innovation meets execution. Explore a collection of projects that showcase the diversity and excellence of Speedside Tech.</p>
                     </div>
                     <div className='relative px-5 md:px-0'>
                         <Carousel
@@ -288,7 +294,7 @@ export default function Home() {
                     <div className='w-full lg:w-1/2 flex flex-col text-text-body-bluegray'>
                         <span className='text-[#D97706] font-medium mb-2'>Speedside Tech</span>
                         <h2 className='text-3xl md:text-4xl font-bold mb-5'>Our Commitment to You</h2>
-                        <p className='mb-7'>At Speedside Labs, we redefine the software experience with a commitment to three core principles</p>
+                        <p className='mb-7'>At Speedside Tech, we redefine the software experience with a commitment to three core principles</p>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                             <div className='flex flex-col gap-2'>
                                 <Image
@@ -328,7 +334,7 @@ export default function Home() {
                                 <path d="M11.5 0H21.5L14.5 38H0L11.5 0Z" fill="#D9D9D9" />
                                 <path d="M35 0H45L38 38H23.5L35 0Z" fill="#D9D9D9" />
                             </svg>
-                            <p className='font-medium text-text-body-gray1'>Working with Speedside Labs was a game-changer for our business. Their innovative solutions and commitment to excellence exceeded our expectations. </p>
+                            <p className='font-medium text-text-body-gray1'>Working with Speedside Tech was a game-changer for our business. Their innovative solutions and commitment to excellence exceeded our expectations. </p>
                             <span className='font-medium text-text-body-gray1'>_ Aria Zinanrio</span>
                             <div className='flex flex-row flex-wrap items-center gap-4'>
                                 <Image
@@ -383,7 +389,7 @@ export default function Home() {
                         <div className='flex flex-col items-center lg:items-start gap-7'>
                             <h3 className='text-white text-4xl font-semibold'>Speedside</h3>
                             <div className='flex flex-col gap-2'>
-                                <span className='text-[#F5F7FA] text-sm'>Copyright © 2023 Speedside lab.</span>
+                                <span className='text-[#F5F7FA] text-sm'>Copyright © 2023 Speedside Tech.</span>
                                 <span className='text-[#F5F7FA] text-sm'>All rights reserved</span>
                             </div>
                             <div className='flex flex-row gap-3 items-center'>
