@@ -1,5 +1,7 @@
+'use client'
+
 import Image from 'next/image'
-import { BsPlay } from "react-icons/bs";
+import { BsChevronLeft, BsChevronRight, BsPlay } from "react-icons/bs";
 import HeaderImg from '../public/img/header-img.png'
 import UIUXImg from '../public/img/uiux.png'
 import WebdevImg from '../public/img/webdev.png'
@@ -9,6 +11,51 @@ import ServicesBg from '../public/img/services-bg.png'
 import Package1Img from '../public/img/package1.png'
 import Package2Img from '../public/img/package2.png'
 import Package3Img from '../public/img/package3.png'
+import Work1 from '../public/img/work1.png'
+import WorkBg from '../public/img/work-bg.png'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
+    const { carouselState: { currentSlide } } = rest;
+    return (
+        <div className="flex flex-row items-center gap-4 absolute pt-10 ml-36">
+            {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
+            <ButtonTwo onClick={() => next()} />
+            <ButtonThree onClick={() => goToSlide(currentSlide + 1)}> Go to any slide </ButtonThree> */}
+            <button
+                className={`rounded-full border border-black w-7 h-7 flex items-center justify-center ${currentSlide === 0 ? 'disable' : ''}`}
+                onClick={() => previous()}
+            >
+                <BsChevronLeft />
+            </button>
+            <button
+                className='rounded-full border border-black w-7 h-7 flex items-center justify-center'
+                onClick={() => next()}
+            >
+                <BsChevronRight />
+            </button>
+        </div>
+    );
+};
+
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1400 },
+        items: 4,
+        slidesToSlide: 3 // optional, default to 1.
+    },
+    tablet: {
+        breakpoint: { max: 1400, min: 1024 },
+        items: 3,
+        slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+        breakpoint: { max: 768, min: 0 },
+        items: 1,
+        slidesToSlide: 1 // optional, default to 1.
+    }
+};
 
 export default function Home() {
     return (
@@ -128,14 +175,88 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className='relative py-14'>
-                <div>
-                    <div className='flex flex-row items-center justify-between container mx-auto px-20'>
+            <section className='relative py-16'>
+                <Image
+                    src={WorkBg}
+                    alt='work bg'
+                    className='absolute top-0 right-0 -z-10'
+                />
+                <div className='flex flex-col gap-16'>
+                    <div className='flex flex-row items-center justify-between container mx-auto px-10'>
                         <h2 className='text-5xl text-text-h2-purple'>
                             <span className='font-bold'>Our Recent Work</span><br />
                             <span className='font-light'>By Speedside Lab</span>
                         </h2>
                         <p className='text-text-body-purple w-2/5'>Welcome to our portfolio, where innovation meets execution. Explore a collection of projects that showcase the diversity and excellence of Speedside Labs.</p>
+                    </div>
+                    <div className='relative'>
+                        <Carousel
+                            // ssr={true}
+                            responsive={responsive}
+                            arrows={false}
+                            renderButtonGroupOutside={true}
+                            customButtonGroup={<ButtonGroup />}
+                            sliderClass='gap-10 !ml-52'
+                            swipeable={true}
+                            draggable={true}
+                            slidesToSlide={1}
+                        >
+                            <div className='bg-white rounded-lg p-4 flex flex-col gap-5'>
+                                <Image
+                                    src={Work1}
+                                    alt='work 1'
+                                    className='w-full'
+                                />
+                                <div className='flex flex-row items-center justify-between py-3'>
+                                    <h4 className='text-text-h4-purple text-2xl font-bold'>UI Soup</h4>
+                                    <a href="#" className='rounded-full text-xs border border-black px-2 py-1 text-text-h4-purple'>View Work</a>
+                                </div>
+                            </div>
+                            <div className='bg-white rounded-lg p-4 flex flex-col gap-5'>
+                                <Image
+                                    src={Work1}
+                                    alt='work 1'
+                                    className='w-full'
+                                />
+                                <div className='flex flex-row items-center justify-between py-3'>
+                                    <h4 className='text-text-h4-purple text-2xl font-bold'>UI Soup</h4>
+                                    <a href="#" className='rounded-full text-xs border border-black px-2 py-1 text-text-h4-purple'>View Work</a>
+                                </div>
+                            </div>
+                            <div className='bg-white rounded-lg p-4 flex flex-col gap-5'>
+                                <Image
+                                    src={Work1}
+                                    alt='work 1'
+                                    className='w-full'
+                                />
+                                <div className='flex flex-row items-center justify-between py-3'>
+                                    <h4 className='text-text-h4-purple text-2xl font-bold'>UI Soup</h4>
+                                    <a href="#" className='rounded-full text-xs border border-black px-2 py-1 text-text-h4-purple'>View Work</a>
+                                </div>
+                            </div>
+                            <div className='bg-white rounded-lg p-4 flex flex-col gap-5'>
+                                <Image
+                                    src={Work1}
+                                    alt='work 1'
+                                    className='w-full'
+                                />
+                                <div className='flex flex-row items-center justify-between py-3'>
+                                    <h4 className='text-text-h4-purple text-2xl font-bold'>UI Soup</h4>
+                                    <a href="#" className='rounded-full text-xs border border-black px-2 py-1 text-text-h4-purple'>View Work</a>
+                                </div>
+                            </div>
+                            <div className='bg-white rounded-lg p-4 flex flex-col gap-5'>
+                                <Image
+                                    src={Work1}
+                                    alt='work 1'
+                                    className='w-full'
+                                />
+                                <div className='flex flex-row items-center justify-between py-3'>
+                                    <h4 className='text-text-h4-purple text-2xl font-bold'>UI Soup</h4>
+                                    <a href="#" className='rounded-full text-xs border border-black px-2 py-1 text-text-h4-purple'>View Work</a>
+                                </div>
+                            </div>
+                        </Carousel>
                     </div>
                 </div>
             </section>
