@@ -20,6 +20,7 @@ import TruckImg from '../public/img/truck.png'
 import TrophyImg from '../public/img/trophy.png'
 import TrekkingImg from '../public/img/trekking.png'
 import Carousel from "react-multi-carousel";
+import WhatsappImg from '../public/img/whatsapp.png'
 import "react-multi-carousel/lib/styles.css";
 
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
@@ -66,6 +67,12 @@ const responsive = {
 export default function Home() {
     return (
         <>
+            <a href="#" className='fixed bottom-7 md:bottom-12 right-7 md:right-12 z-20'>
+                <Image
+                    src={WhatsappImg}
+                    alt='whatsapp image'
+                />
+            </a>
             <nav className='container mx-auto hidden lg:flex flex-row items-center justify-between py-7 px-20'>
                 <a href="" className='text-primary text-5xl font-semibold'>Speedside</a>
                 <div className='flex flex-row items-center gap-20'>
