@@ -142,7 +142,7 @@ export default function Home() {
                                 alt='mobile dev image'
                             />
                             <h4 className='font-bold text-text-purple tracking-wider'>MOBILE APP DEVELOPMENT</h4>
-                            <p className='text-sm font-light text-text-body-gray2'>We're committed to delivering mobile solutions that resonate with your users.</p>
+                            <p className='text-sm font-light text-text-body-gray2'>We&apos;re committed to delivering mobile solutions that resonate with your users.</p>
                         </div>
                         <div className='rounded-lg bg-white p-4 flex flex-col gap-3'>
                             <Image
@@ -158,7 +158,7 @@ export default function Home() {
             <section className='container mx-auto px-5 md:px-20 flex flex-col gap-7 py-36'>
                 <div className='flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-start'>
                     <h2 className='text-3xl md:text-5xl font-semibold text-text-h2-black leading-snug md:w-1/3'>Our Support Package</h2>
-                    <p className='font-medium text-text-body-gray1 md:w-1/3'>At Speedside Tech, our commitment to your success doesn't end at project completion. Dive into the tailored support experience offered by our Support Package.</p>
+                    <p className='font-medium text-text-body-gray1 md:w-1/3'>At Speedside Tech, our commitment to your success doesn&apos;t end at project completion. Dive into the tailored support experience offered by our Support Package.</p>
                     <a href="#" className='text-white bg-primary rounded-full px-5 py-3 whitespace-nowrap'>Get Started</a>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
