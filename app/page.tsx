@@ -13,6 +13,11 @@ import Package2Img from '../public/img/package2.png'
 import Package3Img from '../public/img/package3.png'
 import Work1 from '../public/img/work1.png'
 import WorkBg from '../public/img/work-bg.png'
+import AboutImg from '../public/img/about-img.png'
+import AboutBg from '../public/img/about-bg.png'
+import TruckImg from '../public/img/truck.png'
+import TrophyImg from '../public/img/trophy.png'
+import TrekkingImg from '../public/img/trekking.png'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -175,7 +180,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className='relative py-16'>
+            <section className='relative py-14'>
                 <Image
                     src={WorkBg}
                     alt='work bg'
@@ -257,6 +262,51 @@ export default function Home() {
                                 </div>
                             </div>
                         </Carousel>
+                    </div>
+                </div>
+            </section>
+            <section className='relative mt-36'>
+                <Image
+                    src={AboutBg}
+                    alt='about bg'
+                    className='absolute top-0 left-0 -z-10'
+                />
+                <div className='container mx-auto flex flex-row px-20 py-36 gap-20 items-start'>
+                    <Image
+                        src={AboutImg}
+                        alt='about image'
+                        className='w-1/2'
+                    />
+                    <div className='w-1/2 flex flex-col text-text-body-bluegray'>
+                        <span className='text-[#D97706] font-medium mb-2'>Speedside Tech</span>
+                        <h2 className='text-4xl font-bold mb-5'>Our Commitment to You</h2>
+                        <p className='mb-7'>At Speedside Labs, we redefine the software experience with a commitment to three core principles</p>
+                        <div className='grid grid-cols-2 gap-10'>
+                            <div className='flex flex-col gap-2'>
+                                <Image
+                                    src={TruckImg}
+                                    alt='truck image'
+                                />
+                                <h4 className='font-bold text-lg'>Fast</h4>
+                                <p className='text-sm'>Our solutions are crafted with agility, ensuring your projects come to life at the speed of your vision.</p>
+                            </div>
+                            <div className='flex flex-col gap-2'>
+                                <Image
+                                    src={TrophyImg}
+                                    alt='trophy image'
+                                />
+                                <h4 className='font-bold text-lg'>Affordable</h4>
+                                <p className='text-sm'>We believe in delivering excellence without breaking the bank, making advanced technology accessible to all.</p>
+                            </div>
+                            <div className='flex flex-col gap-2'>
+                                <Image
+                                    src={TrekkingImg}
+                                    alt='trekking image'
+                                />
+                                <h4 className='font-bold text-lg'>Trusted</h4>
+                                <p className='text-sm'>Trust is earned through transparency, reliability, and a commitment to your business success.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
