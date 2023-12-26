@@ -12,10 +12,11 @@ const config: Config = {
         primary: '#FC8C65',
         secondary: '#F7F0EA',
         tertiary: '#FFC7B6',
+        footer: {
+          primary: '#161C28',
+          form: '#222938'
+        },
         text: {
-          // gray1: '#A6A6A6',
-          // gray2: '#331B3BA8',
-          // grayblue: '#0F172A'
           nav: '#A6A6A6',
           body: {
             gray1: '#A6A6A6',
