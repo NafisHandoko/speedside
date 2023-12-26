@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { BsChevronLeft, BsChevronRight, BsPlay, BsPlayFill } from "react-icons/bs";
 import HeaderImg from '../public/img/header-img.png'
+import HeaderVector from '../public/img/header-vector.png'
 import UIUXImg from '../public/img/uiux.png'
 import WebdevImg from '../public/img/webdev.png'
 import MobiledevImg from '../public/img/mobiledev.png'
@@ -24,7 +25,7 @@ import "react-multi-carousel/lib/styles.css";
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
     const { carouselState: { currentSlide } } = rest;
     return (
-        <div className="flex flex-row items-center gap-4 absolute pt-10 ml-36">
+        <div className="flex flex-row items-center gap-4 absolute left-0 pt-10 w-full justify-center md:justify-start md:ml-36">
             {/* <ButtonOne className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
             <ButtonTwo onClick={() => next()} />
             <ButtonThree onClick={() => goToSlide(currentSlide + 1)}> Go to any slide </ButtonThree> */}
@@ -65,7 +66,7 @@ const responsive = {
 export default function Home() {
     return (
         <>
-            <nav className='container mx-auto flex flex-row items-center justify-between py-5 px-20'>
+            <nav className='container mx-auto hidden lg:flex flex-row items-center justify-between py-7 px-20'>
                 <a href="" className='text-primary text-5xl font-semibold'>Speedside</a>
                 <div className='flex flex-row items-center gap-20'>
                     <ul className='flex flex-row gap-10 items-center font-semibold'>
@@ -78,12 +79,16 @@ export default function Home() {
                     <a href="#" className='bg-primary text-white rounded-full px-4 py-2'>Contact Us</a>
                 </div>
             </nav>
-            <header className='container mx-auto flex flex-row items-center justify-between px-20 pb-20'>
-                <div className='w-1/2 flex flex-col gap-5'>
-                    <h1 className='font-bold text-6xl text-text-h1 leading-tight'>Accelerate Your Business with Speedside</h1>
-                    <svg width="487" height="34" viewBox="0 0 487 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 30C73.6307 10.3798 266.914 -17.0885 483 30" stroke="#FA875B" stroke-width="8" stroke-linecap="round" />
-                    </svg>
+            <nav className='lg:hidden container mx-auto px-5 py-6 flex flex-row items-center justify-between'>
+                <a href="" className='text-primary text-2xl font-semibold'>Speedside</a>
+            </nav>
+            <header className='container mx-auto flex flex-col lg:flex-row items-center justify-between px-5 md:px-20 pb-20'>
+                <div className='w-full lg:w-1/2 flex flex-col gap-5'>
+                    <h1 className='font-bold text-4xl md:text-6xl text-text-h1 leading-tight'>Accelerate Your Business with Speedside</h1>
+                    <Image
+                        src={HeaderVector}
+                        alt='header vector'
+                    />
                     <p className='text-black font-medium text-lg'>At Speedside, we accelerate innovation. Our commitment is simple: fast, affordable, and reliable solutions. Experience the power of innovation at the speed of thought.</p>
                     <div className='flex flex-row items-center gap-7'>
                         <a href="#" className='text-white bg-primary rounded-full px-5 py-3'>Get Started</a>
@@ -93,25 +98,25 @@ export default function Home() {
                         </a>
                     </div>
                 </div>
-                <div className='w-1/2'>
+                <div className='w-full lg:w-1/2'>
                     <Image
                         src={HeaderImg}
                         alt='header image'
                     />
                 </div>
             </header>
-            <section className='relative py-14'>
+            <section className='relative py-14 bg-primary lg:bg-transparent'>
                 <Image
                     src={ServicesBg}
                     alt='services bg'
-                    className='absolute top-0 left-0 -z-10'
+                    className='absolute top-0 left-0 -z-10 hidden lg:block'
                 />
-                <div className='container mx-auto flex flex-col gap-16 px-10'>
-                    <h2 className='text-5xl text-text-h2-purple text-center'>
+                <div className='container mx-auto flex flex-col gap-16 px-5 md:px-10'>
+                    <h2 className='text-3xl md:text-5xl text-text-h2-purple text-center'>
                         <span className='font-bold'>What We Do</span><br />
                         <span className='font-light'>For Your Business</span>
                     </h2>
-                    <div className='grid grid-cols-4 gap-7'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7'>
                         <div className='rounded-lg bg-white p-4 flex flex-col gap-3'>
                             <Image
                                 src={UIUXImg}
@@ -147,61 +152,64 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className='container mx-auto px-20 flex flex-col gap-7 py-20'>
-                <div className='flex flex-row items-center justify-between gap-4'>
-                    <h2 className='text-5xl font-semibold text-text-h2-black leading-snug w-1/3'>Our Support Package</h2>
-                    <p className='font-medium text-text-body-gray1 w-1/3'>At Speedside Labs, our commitment to your success doesn't end at project completion. Dive into the tailored support experience offered by our Support Package.</p>
+            <section className='container mx-auto px-5 md:px-20 flex flex-col gap-7 py-20'>
+                <div className='flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-start'>
+                    <h2 className='text-3xl md:text-5xl font-semibold text-text-h2-black leading-snug md:w-1/3'>Our Support Package</h2>
+                    <p className='font-medium text-text-body-gray1 md:w-1/3'>At Speedside Labs, our commitment to your success doesn't end at project completion. Dive into the tailored support experience offered by our Support Package.</p>
                     <a href="#" className='text-white bg-primary rounded-full px-5 py-3 whitespace-nowrap'>Get Started</a>
                 </div>
-                <div className='grid grid-cols-3 gap-8'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                     <div className='flex flex-col gap-5'>
                         <Image
                             src={Package1Img}
                             alt='package1 image'
+                            className='w-full'
                         />
-                        <h3 className='text-text-h3 font-semibold text-3xl'>Documentation</h3>
+                        <h3 className='text-text-h3 font-semibold text-2xl lg:text-3xl'>Documentation</h3>
                         <p className='text-text-body-gray1 font-medium'>Receive detailed and user-friendly documentation that acts as your go-to resource, guiding your team through the functionalities of your solution.</p>
                     </div>
                     <div className='flex flex-col gap-5'>
                         <Image
                             src={Package2Img}
                             alt='package2 image'
+                            className='w-full'
                         />
-                        <h3 className='text-text-h3 font-semibold text-3xl'>Maintenance & Support</h3>
+                        <h3 className='text-text-h3 font-semibold text-2xl lg:text-3xl'>Maintenance & Support</h3>
                         <p className='text-text-body-gray1 font-medium'>Our dedicated support team is at your service. We proactively address issues, conduct updates, and ensure your solution operates at peak performance.</p>
                     </div>
                     <div className='flex flex-col gap-5'>
                         <Image
                             src={Package3Img}
                             alt='package3 image'
+                            className='w-full'
                         />
-                        <h3 className='text-text-h3 font-semibold text-3xl'>Knowledge Transfer</h3>
+                        <h3 className='text-text-h3 font-semibold text-2xl lg:text-3xl'>Knowledge Transfer</h3>
                         <p className='text-text-body-gray1 font-medium'>Our experts provide hands-on training, empowering your team to handle day-to-day operations confidently.</p>
                     </div>
                 </div>
             </section>
-            <section className='relative py-14'>
+            <section className='relative pt-14 pb-28 lg:pb-14 bg-tertiary lg:bg-transparent'>
                 <Image
                     src={WorkBg}
                     alt='work bg'
-                    className='absolute top-0 right-0 -z-10'
+                    className='absolute top-0 right-0 -z-10 hidden lg:block'
                 />
                 <div className='flex flex-col gap-16'>
-                    <div className='flex flex-row items-center justify-between container mx-auto px-10'>
-                        <h2 className='text-5xl text-text-h2-purple'>
+                    <div className='flex flex-col md:flex-row items-center justify-between gap-5 container mx-auto px-5 md:px-10 text-center md:text-start'>
+                        <h2 className='text-3xl md:text-5xl text-text-h2-purple'>
                             <span className='font-bold'>Our Recent Work</span><br />
                             <span className='font-light'>By Speedside Lab</span>
                         </h2>
-                        <p className='text-text-body-purple w-2/5'>Welcome to our portfolio, where innovation meets execution. Explore a collection of projects that showcase the diversity and excellence of Speedside Labs.</p>
+                        <p className='text-text-body-purple w-full md:w-2/5'>Welcome to our portfolio, where innovation meets execution. Explore a collection of projects that showcase the diversity and excellence of Speedside Labs.</p>
                     </div>
-                    <div className='relative'>
+                    <div className='relative px-5 md:px-0'>
                         <Carousel
                             // ssr={true}
                             responsive={responsive}
                             arrows={false}
                             renderButtonGroupOutside={true}
                             customButtonGroup={<ButtonGroup />}
-                            sliderClass='gap-10 !ml-52'
+                            sliderClass='md:gap-10 !ml-0 md:!ml-52'
                             swipeable={true}
                             draggable={true}
                             slidesToSlide={1}
@@ -271,17 +279,17 @@ export default function Home() {
                     alt='about bg'
                     className='absolute top-0 left-0 -z-10'
                 />
-                <div className='container mx-auto flex flex-row px-20 py-36 gap-20 items-start'>
+                <div className='container mx-auto flex flex-col lg:flex-row px-5 md:px-20 py-36 gap-10 md:gap-20 items-start'>
                     <Image
                         src={AboutImg}
                         alt='about image'
-                        className='w-1/2'
+                        className='w-full lg:w-1/2'
                     />
-                    <div className='w-1/2 flex flex-col text-text-body-bluegray'>
+                    <div className='w-full lg:w-1/2 flex flex-col text-text-body-bluegray'>
                         <span className='text-[#D97706] font-medium mb-2'>Speedside Tech</span>
-                        <h2 className='text-4xl font-bold mb-5'>Our Commitment to You</h2>
+                        <h2 className='text-3xl md:text-4xl font-bold mb-5'>Our Commitment to You</h2>
                         <p className='mb-7'>At Speedside Labs, we redefine the software experience with a commitment to three core principles</p>
-                        <div className='grid grid-cols-2 gap-10'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                             <div className='flex flex-col gap-2'>
                                 <Image
                                     src={TruckImg}
@@ -311,9 +319,9 @@ export default function Home() {
                 </div>
             </section>
             <footer className='bg-footer-primary py-32'>
-                <div className='container mx-auto px-20 flex flex-col'>
-                    <div className='flex flex-row gap-20 items-center'>
-                        <div className='flex flex-col gap-6 w-1/2'>
+                <div className='container mx-auto px-5 md:px-20 flex flex-col'>
+                    <div className='flex flex-col lg:flex-row gap-20 items-center'>
+                        <div className='flex flex-col gap-6 w-full lg:w-1/2'>
                             <h2 className='text-white text-5xl font-semibold leading-snug'>People are Saying About Speedside</h2>
                             <p className='font-medium text-text-body-gray1'>At Speedside, we bring innovation to life swiftly, making excellence accessible. Experience the speed of progress.</p>
                             <svg width="45" height="38" viewBox="0 0 45 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -322,7 +330,7 @@ export default function Home() {
                             </svg>
                             <p className='font-medium text-text-body-gray1'>Working with Speedside Labs was a game-changer for our business. Their innovative solutions and commitment to excellence exceeded our expectations. </p>
                             <span className='font-medium text-text-body-gray1'>_ Aria Zinanrio</span>
-                            <div className='flex flex-row items-center gap-4'>
+                            <div className='flex flex-row flex-wrap items-center gap-4'>
                                 <Image
                                     src={`https://source.unsplash.com/random/?person`}
                                     alt='person image'
@@ -354,7 +362,7 @@ export default function Home() {
                                 <div className='text-white border-2 border-white w-[60px] h-[60px] flex items-center justify-center rounded-full text-2xl'><BsPlayFill /></div>
                             </div>
                         </div>
-                        <div className='w-1/2 bg-footer-form rounded-xl p-16 flex flex-col'>
+                        <div className='w-full lg:w-1/2 bg-footer-form rounded-xl p-6 sm:p-16 flex flex-col'>
                             <h2 className='text-primary font-semibold text-5xl text-center'>Speedside</h2>
                             <h3 className='text-3xl text-white font-medium text-center py-4'>Get Started</h3>
                             <form className='flex flex-col gap-5'>
@@ -371,8 +379,8 @@ export default function Home() {
                             <span className='text-text-body-gray1 text-sm font-medium mt-2 self-end'>or <a href="#" className='text-white'>Whatsapp Chat</a></span>
                         </div>
                     </div>
-                    <nav className='flex flex-row justify-between pt-28'>
-                        <div className='flex flex-col gap-7'>
+                    <nav className='flex flex-col lg:flex-row justify-between gap-7 pt-14 lg:pt-28 text-center lg:text-start'>
+                        <div className='flex flex-col items-center lg:items-start gap-7'>
                             <h3 className='text-white text-4xl font-semibold'>Speedside</h3>
                             <div className='flex flex-col gap-2'>
                                 <span className='text-[#F5F7FA] text-sm'>Copyright © 2023 Speedside lab.</span>
@@ -405,7 +413,7 @@ export default function Home() {
                                 </a>
                             </div>
                         </div>
-                        <div className='flex flex-row gap-32'>
+                        <div className='flex flex-col lg:flex-row gap-8 lg:gap-32'>
                             <div className='flex flex-col gap-6 font-medium'>
                                 <span className='text-white'>Support</span>
                                 <ul className='flex flex-col gap-4 text-text-nav'>
